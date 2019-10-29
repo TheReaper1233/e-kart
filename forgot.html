@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Forgot Details | E-Kart</title>
+<link rel = "stylesheet" href = "forgot.css">
+<script type="text/javascript">
+
+function f()
+{
+	if (document.fform.email.value.includes("@") && document.fform.email.value.includes("."))
+	{ if (document.fform.email.value.includes(" "))
+	
+		alert("Enter a valid email address");
+		
+	  else
+	  {alert("We have sent your login details to your email id successfully");
+	  window.open("index.html","_self")}
+	}
+	else
+	{alert("Enter a valid email address");}
+}
+
+</script>
+</head>
+<body>
+<center>
+	<h1><u>Forgot your Account Details !?</u></h1><br>
+	<h3>No worries, We got you covered! Just follow the process given below</h3>
+</center>
+<form name = "fform">
+Please enter your email address to receive your login details.<br><br>
+	Email Address : <input type="text" name="email"><br><br>
+
+	<input type="button" name="send" value="Send" onclick = "f()">
+
+</form>
+</body>
+</html>

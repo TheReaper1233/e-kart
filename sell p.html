@@ -1,0 +1,59 @@
+<html>
+<head>
+<style type = "text/css">
+body{
+	background:#DAF7A6
+}
+
+h1{
+	font-family:Alba Super ; font-size:80px ; color:#900C3F
+}
+
+form{
+	font-family:Arial ; font-size:20px ; color:#900C3F ; margin-left:12cm
+}
+
+</style>
+<script type="text/javascript">
+
+function validate(){
+	if (document.spform.brand.value == "Select")
+	alert("Select the Brand from the dropdown menu please");
+	else if(document.spform.Model.value == "")
+	alert("Model is a required field");
+	else if ((document.spform.AdTitle.value == "Enter your Ad Title here") || (document.spform.AdTitle.value == ""))
+	alert("Ad Title is a required field");
+	else if ((document.spform.Description.value == "Enter your Product Description here") || (document.spform.Description.value == ""))
+	alert("Product Description is a required field");
+	else if (document.spform.Price.value == "")
+	alert("Product Price is a required field");
+	else
+	{alert("Thanks for posting your ad. It will be visible on our website shortly");
+	window.open("frames.html","_parent");
+	}
+}
+</script>
+</head>
+<body>
+<center>
+	<h1>Product Details</h1>
+</center>
+<form name = "spform">
+	Brand : <select name = "brand">
+		<option value = "Select" selected>Select the Brand</option>
+		<option value = "Apple">Apple</option>
+		<option value = "Samsung">Samsung</option>
+		</select>
+		<br><br>
+	Model : <input type="text" name="Model"><br><br>
+	Ad Title : <br><textarea rows = "3" cols = "20" name = "AdTitle">Enter your Ad Title here</textarea><br><br>
+	Product Description : <br>
+	<textarea rows = "10" cols = "60" name = "Description">Enter your Product Description here</textarea><br><br>
+	Set a Price : ₹<input type="text" name="Price">
+	<br><br>
+	<input type="button" name="submit" value="Post Ad" onclick = "validate()">
+	<input type="reset" name="reset" value="Reset Details">
+	
+</form>
+</body>
+</html>

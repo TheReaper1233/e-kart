@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href = "buy form.css" />
+<script type="text/javascript">
+
+function e()
+{ 	var x = 1;
+
+	if (document.bform.Email.value.includes("@") && document.bform.Email.value.includes("."))
+	{ if (document.bform.Email.value.includes(" "))
+	
+		x=1;
+		
+	  else
+	  {x = 2;}
+	}
+	else
+	{x=1;}
+	return x;
+}
+
+function validate(){
+	if(document.bform.FirstName.value == "")
+	alert("First Name is a required field");
+	else if (document.bform.LastName.value == "")
+	alert("Last Name is a required field");
+	else if (e() == 1)
+	alert("Enter correct Email Address");
+	else if ((document.bform.Address.value == "Enter your Address here") || (document.bform.Address.value == ""))
+	alert("Address is a required field");
+	else if (document.bform.CD.value == "")
+	alert("City/District is a required field");
+	else if (document.bform.dropdown.value == "Select")
+	alert("Select your State from the dropdown menu please");
+	else if (document.bform.Atype.value == "")
+	alert("Select Address type please");
+	else
+	{alert("Thanks for purchasing the product !");
+	window.open("main image.html","_self");
+	}
+}
+
+function calculate()
+{	var x = eval(prompt("How many items you want to buy ?"));
+	var y = x * 69900;
+	alert ("Your net payable amount will be " + x +" x " + "₹" + 69900 + " = ₹" + y);
+}
+</script>
+</head>
+<body>
+<center>
+	<h1>Address Details</h1>
+</center>
+<form name = "bform">
+	First Name : <input type="text" name="FirstName"><br><br>
+	Last Name : <input type="text" name="LastName"><br><br>
+	Email : <input type="text" name="Email"><br><br>
+	Would you like to receive our e-mails in future? <input type="checkbox" name="Check" value="on">Yes<br><br>
+	<textarea rows = "5" cols = "50" name = "Address">Enter your Address here</textarea><br><br>
+	City/District : <input type="text" name="CD" value=""><br><br>
+	State : <select name = "dropdown">
+		<option value = "Select" selected>Select your State</option>
+		<option value = "Andhra Pradesh">Andhra Pradesh</option>
+		<option value = "Assam">Assam</option>
+		<option value = "Delhi">Delhi</option>
+		<option value = "Haryana">Haryana</option>
+		<option value = "Maharashtra">Maharashtra</option>
+		<option value = "Tamil Nadu">Tamil Nadu</option>
+    </select>
+	<br><br>
+	Address type : 
+	<input type = "radio" name = "Atype" value = "Home">Home
+	<input type = "radio" name = "Atype" value = "Work">Work
+	<br><br>
+	<input type="button" name="cal" value="Calculate the net amount" onclick = "calculate()" ><br><br>
+	
+	<input type="button" name="submit" value="Order Now" onclick = "validate()">
+	<input type="reset" name="reset" value="Reset Details">
+	
+</form>
+</body>
+</html>

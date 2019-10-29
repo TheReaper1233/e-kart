@@ -1,0 +1,85 @@
+<html>
+<head>
+<style type = "text/css">
+body{
+	background:#0F9F95
+}
+
+h1{
+	font-family:Alba Super ; font-size:80px ; color:#D0DDDC
+}
+
+form{
+	font-family:Arial ; font-size:20px ; color:#D0DDDC ; margin-left:12cm
+}
+</style>
+<script type="text/javascript">
+
+function e()
+{ 	var x = 1;
+
+	if (document.sform.Email.value.includes("@") && document.sform.Email.value.includes("."))
+	{ if (document.sform.Email.value.includes(" "))
+	
+		x=1;
+		
+	  else
+	  {x = 2;}
+	}
+	else
+	{x=1;}
+	return x;
+}
+
+function validate(){
+	if(document.sform.FirstName.value == "")
+	alert("First Name is a required field");
+	else if (document.sform.LastName.value == "")
+	alert("Last Name is a required field");
+	else if (document.sform.Gender.value == "")
+	alert("Select Gender type please");
+	else if (e() == 1)
+	alert("Enter correct Email Address");
+	else if (document.sform.CD.value == "")
+	alert("City/District is a required field");
+	else if (document.sform.dropdown.value == "Select")
+	alert("Select your State from the dropdown menu please");
+	else
+	{alert("Thanks for sharing your personal details with us \r\n Now you will be redirected to enter product details...");
+	window.open("sell p.html","_self");
+	}
+}
+</script>
+</head>
+<body>
+<center>
+	<h1>Personal Details</h1>
+</center>
+<form name = "sform">
+	First Name : <input type="text" name="FirstName"><br><br>
+	Last Name : <input type="text" name="LastName"><br><br>
+	Gender : 
+	<input type = "radio" name = "Gender" value = "Male">Male
+	<input type = "radio" name = "Gender" value = "Female">Female
+	<br><br>
+	Email : <input type="text" name="Email"><br><br>
+	Would you like to be in our email subscribers list? <input type="checkbox" name="Check" value="on">Yes<br><br>
+	City/District : <input type="text" name="CD" value=""><br><br>
+	State : <select name = "dropdown">
+		<option value = "Select" selected>Select your State</option>
+		<option value = "Andhra Pradesh">Andhra Pradesh</option>
+		<option value = "Assam">Assam</option>
+		<option value = "Delhi">Delhi</option>
+		<option value = "Haryana">Haryana</option>
+		<option value = "Maharashtra">Maharashtra</option>
+		<option value = "Tamil Nadu">Tamil Nadu</option>
+    </select>
+	<br><br>
+	<br><br>
+<center>
+	<input type="button" name="submit" value="Next" onclick = "validate()">
+	<input type="reset" name="reset" value="Reset Details">
+</center>	
+</form>
+</body>
+</html>
