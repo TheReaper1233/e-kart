@@ -6,8 +6,12 @@
 function validate(){
 	if(document.lform.UserName.value == "")
 	alert("Please enter your User Name");
+	else if (document.lform.UserName.value != "admin")
+	alert("User Name mis-match");
 	else if (document.lform.Password.value == "")
 	alert("Please enter your Password");
+	else if (document.lform.Password.value != "admin")
+	alert("Password mis-match");
 	else
 	{alert("Login Successful !");
 	window.open("frames.html","_self");
